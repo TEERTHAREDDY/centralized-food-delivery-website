@@ -3,6 +3,7 @@ import psycopg2
 import traceback
 from datetime import datetime
 import random
+import os
 
 app = Flask(__name__)
 
@@ -100,11 +101,16 @@ def order_status():
     if order_id:
         try:
             conn = psycopg2.connect(
-                database="food_delivery_db",
-                user="postgres",
-                password="Spring@2024JK",
-                host="localhost",
-                port="5432"
+                # database="food_delivery_db",
+                # user="postgres",
+                # password="Spring@2024JK",
+                # host="localhost",
+                # port="5432"
+                database=os.environ['DB_NAME'],
+                user=os.environ['DB_USER'],
+                password=os.environ['DB_PASSWORD'],
+                host=os.environ['DB_HOST'],
+                port=os.environ['DB_PORT']
             )
             cur = conn.cursor()
 
