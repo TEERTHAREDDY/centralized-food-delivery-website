@@ -35,11 +35,16 @@ def display():
     if order_id:
         try:
             conn = psycopg2.connect(
-                database="food_delivery_db",
-                user="postgres",
-                password="Spring@2024JK",
-                host="localhost",
-                port="5432"
+                # database="food_delivery_db",
+                # user="postgres",
+                # password="Spring@2024JK",
+                # host="localhost",
+                # port="5432"
+                database=os.environ['DB_NAME'],
+                user=os.environ['DB_USER'],
+                password=os.environ['DB_PASSWORD'],
+                host=os.environ['DB_HOST'],
+                port=os.environ['DB_PORT'] || 4000
             )
             cur = conn.cursor()
 
@@ -110,7 +115,7 @@ def order_status():
                 user=os.environ['DB_USER'],
                 password=os.environ['DB_PASSWORD'],
                 host=os.environ['DB_HOST'],
-                port=os.environ['DB_PORT']
+                port=os.environ['DB_PORT'] || 4000
             )
             cur = conn.cursor()
 
@@ -150,11 +155,16 @@ def submit():
     cur = None
     try:
         conn = psycopg2.connect(
-            database="food_delivery_db",
-            user="postgres",
-            password="Spring@2024JK",
-            host="localhost",
-            port="5432"
+            # database="food_delivery_db",
+            # user="postgres",
+            # password="Spring@2024JK",
+            # host="localhost",
+            # port="5432"
+            database=os.environ['DB_NAME'],
+            user=os.environ['DB_USER'],
+            password=os.environ['DB_PASSWORD'],
+            host=os.environ['DB_HOST'],
+            port=os.environ['DB_PORT'] || 4000
         )
         cur = conn.cursor()
 
