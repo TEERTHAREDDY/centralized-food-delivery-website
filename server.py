@@ -13,15 +13,15 @@ def home():
 
 @app.route('/about')
 def about():
-    return render_template('about.html')
+    return render_template('/templates/about.html')
 
 @app.route('/contact')
 def contact():
-    return render_template('contact.html')
+    return render_template('/templates/contact.html')
 
 @app.route('/register')
 def register():
-    return render_template('register.html')
+    return render_template('/templates/register.html')
 
 @app.route('/display', methods=['GET'])
 def display():
@@ -78,7 +78,7 @@ def display():
                     "delivery_person": row[6]
                 }
             else:
-                return render_template('nodata.html')
+                return render_template('/templates/nodata.html')
 
         except Exception as e:
             print("[ERROR] Failed to fetch order:", e)
@@ -91,7 +91,7 @@ def display():
             if conn:
                 conn.close()
 
-    return render_template('display.html', data=db)
+    return render_template('/templates/display.html', data=db)
 
 @app.route('/order_status', methods=['GET', 'POST'])
 def order_status():
@@ -139,15 +139,15 @@ def order_status():
             if conn:
                 conn.close()
 
-    return render_template('order_status.html', status=status, order_id=order_id)
+    return render_template('/templates/order_status.html', status=status, order_id=order_id)
 
 @app.route('/success')
 def success():
-    return render_template('success.html')
+    return render_template('/templates/success.html')
 
 @app.route('/nodata')
 def nodata():
-    return render_template('nodata.html')
+    return render_template('/templates/nodata.html')
 
 @app.route('/submit', methods=['POST'])
 def submit():
