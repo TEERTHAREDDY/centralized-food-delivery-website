@@ -44,7 +44,7 @@ def display():
                 user=os.environ['DB_USER'],
                 password=os.environ['DB_PASSWORD'],
                 host=os.environ['DB_HOST'],
-                port=os.environ['DB_PORT'] || 4000
+                port=os.environ['DB_PORT']
             )
             cur = conn.cursor()
 
@@ -115,7 +115,7 @@ def order_status():
                 user=os.environ['DB_USER'],
                 password=os.environ['DB_PASSWORD'],
                 host=os.environ['DB_HOST'],
-                port=os.environ['DB_PORT'] || 4000
+                port=os.environ['DB_PORT']
             )
             cur = conn.cursor()
 
@@ -164,7 +164,7 @@ def submit():
             user=os.environ['DB_USER'],
             password=os.environ['DB_PASSWORD'],
             host=os.environ['DB_HOST'],
-            port=os.environ['DB_PORT'] || 4000
+            port=os.environ['DB_PORT']
         )
         cur = conn.cursor()
 
